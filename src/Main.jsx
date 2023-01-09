@@ -30,9 +30,6 @@ const Main = () => {
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % nameList.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
@@ -43,7 +40,10 @@ const Main = () => {
           {isLoading ? (
             <div className="loader"></div>
           ) : (
-            currentItems && currentItems.map((item) => <Card data={item} />)
+            currentItems &&
+            currentItems.map((item, index) => (
+              <Card key={index} data={item} index={index} />
+            ))
           )}
         </div>
       </div>

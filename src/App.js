@@ -19,7 +19,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Main />}></Route>
-            <Route path="/item" element={<Item />}></Route>
+            <Route path="/item/:name" element={<Item />}></Route>
           </Routes>
         </Router>
       </div>
